@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import profileSvg from "/profile.svg";
 
 const Profile = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -12,7 +13,7 @@ const Profile = () => {
     <div className="w-1/4 h-full p-4 border-l border-gray-300 flex flex-col">
       <div className="flex flex-col items-center mb-4">
         <img
-          src="profile-pic-url.jpg"
+          src={profileSvg}
           alt="User Profile"
           className="w-20 h-20 border border-black rounded-full mb-2"
         />

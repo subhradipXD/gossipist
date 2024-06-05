@@ -1,5 +1,8 @@
 import { useState } from "react";
 import EmojiPicker from "emoji-picker-react";
+import profileSvg from "/profile.svg";
+import dummyImage from "/dummyImage.svg";
+
 import {
   FaSmile,
   FaPaperclip,
@@ -27,7 +30,7 @@ const ChatBox = () => {
       <div className="flex items-center justify-between p-2 border-b border-gray-300">
         <div className="flex items-center">
           <img
-            src="profile-pic-url.jpg"
+            src={profileSvg}
             alt="User Profile"
             className="w-10 h-10 ml-3 border border-black rounded-full hover:shadow-md hover:shadow-sky-700 hover:scale-110"
           />
@@ -54,7 +57,7 @@ const ChatBox = () => {
       <div className="flex-1 p-2 overflow-y-auto">
         <div className="flex mb-4">
           <img
-            src="profile-pic-url.jpg"
+            src={profileSvg}
             alt="User Profile"
             className="w-8 h-8 ml-3 border border-black rounded-full"
           />
@@ -69,20 +72,20 @@ const ChatBox = () => {
             <time className="text-xs text-gray-900">10:35 AM</time>
           </div>
           <img
-            src="profile-pic-url.jpg"
+            src={profileSvg}
             alt="User Profile"
             className="w-8 h-8 mr-3 border border-black rounded-full"
           />
         </div>
         <div className="flex mb-4">
           <img
-            src="profile-pic-url.jpg"
+            src={profileSvg}
             alt="User Profile"
             className="w-8 h-8 ml-3 border border-black rounded-full"
           />
           <div className="ml-2">
             <img
-              src="incoming-image-url.jpg"
+              src={dummyImage}
               alt="Incoming Image"
               className="max-w-xs rounded-lg border border-black"
             />
@@ -92,14 +95,14 @@ const ChatBox = () => {
         <div className="flex justify-end mb-4">
           <div className="mr-2">
             <img
-              src="outgoing-image-url.jpg"
+              src={dummyImage}
               alt="Outgoing Image"
               className="max-w-xs rounded-lg border border-black"
             />
             <time className="text-xs text-gray-500">10:45 AM</time>
           </div>
           <img
-            src="profile-pic-url.jpg"
+            src={profileSvg}
             alt="User Profile"
             className="w-8 h-8 mr-3 border border-black rounded-full"
           />

@@ -1,4 +1,5 @@
 import { FaEllipsisV } from "react-icons/fa";
+import profileSvg from "/profile.svg";
 
 const AllChats = () => {
   return (
@@ -6,7 +7,7 @@ const AllChats = () => {
       <div className="flex items-center justify-between p-2 border-b border-gray-300">
         <div className="flex items-center">
           <img
-            src="profile-pic-url.jpg"
+            src={profileSvg}
             alt="User Profile"
             className="w-10 h-10 border border-black rounded-full"
           />
@@ -28,7 +29,7 @@ const AllChats = () => {
       <div className="flex-1 overflow-y-auto">
         <div className="flex items-center p-2 border-b border-gray-300 hover:bg-gray-100">
           <img
-            src="profile-pic-url.jpg"
+            src={profileSvg}
             alt="User Profile"
             className="w-10 h-10 border border-black rounded-full"
           />

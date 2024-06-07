@@ -1,16 +1,24 @@
-import AllChats from "./components/AllChats";
-import ChatBox from "./components/ChatBox";
-import Profile from "./components/Profile";
+import "./App.css"
+
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import MainComponent from "./MainComponent";
+import Authentication from "./Auth/Authentication";
+
+import { FirebaseProvider } from "./Context/FirebaseContext";
 
 function App() {
   return (
-    <div className="flex h-screen">
-      <div className="flex w-full h-full ml-32 mr-32 border border-black">
-        <AllChats />
-        <ChatBox />
-        <Profile />
-      </div>
-    </div>
+
+    <>
+      <FirebaseProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Authentication />}></Route>
+            <Route path="/chat" element={<MainComponent />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </FirebaseProvider>
+    </>
   );
 }
 

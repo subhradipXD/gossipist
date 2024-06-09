@@ -1,13 +1,14 @@
 import { FaEllipsisV } from "react-icons/fa";
 import profileSvg from "/profile.svg";
-import { useUserStore } from "../lib/useUserStore";
+import { useContext } from "react";
+import { AppContext } from "../context/ContextProvider";
 
 const AllChats = () => {
-  const { currentUser } = useUserStore();
-  console.log(currentUser);
+  const { user, authLoading } = useContext(AppContext);
 
-
-  return (
+  return authLoading ? (
+    <></>
+  ) : (
     <div className="flex flex-col w-1/4 h-full border border-white  backdrop-blur-md  rounded-lg">
       <div className="flex items-center justify-between p-4 border-b border-gray-300">
         <div className="flex items-center">
@@ -16,7 +17,9 @@ const AllChats = () => {
             alt="User Profile"
             className="w-12 h-12 border border-white rounded-full hover:shadow-md hover:shadow-sky-700 hover:scale-110"
           />
-          <h2 className="ml-3 text-lg font-semibold text-white">Subhradip Das</h2>
+          <h2 className="ml-3 text-lg font-semibold text-white">
+            {user && user.name}
+          </h2>
         </div>
         <button className="text-gray-500 hover:text-white transition duration-300">
           <FaEllipsisV className="text-xl" />

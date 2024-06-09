@@ -1,7 +1,12 @@
 import { FaEllipsisV } from "react-icons/fa";
 import profileSvg from "/profile.svg";
+import { useUserStore } from "../lib/useUserStore";
 
 const AllChats = () => {
+  const { currentUser } = useUserStore();
+  console.log(currentUser);
+
+
   return (
     <div className="flex flex-col w-1/4 h-full border border-white  backdrop-blur-md  rounded-lg">
       <div className="flex items-center justify-between p-4 border-b border-gray-300">

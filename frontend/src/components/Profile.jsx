@@ -9,11 +9,9 @@ const Profile = () => {
   const navigate = useNavigate();
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-
   return (
     <div className="w-1/4 h-full p-4 border border-white flex flex-col backdrop-blur-md shadow-lg rounded-lg">
       <div className="flex flex-col items-center mb-6">
@@ -22,7 +20,7 @@ const Profile = () => {
           alt="User Profile"
           className="w-24 h-24 border border-white rounded-full mb-3 hover:shadow-md hover:shadow-sky-700 hover:scale-110 transition-transform duration-300"
         />
-        <h2 className="text-xl text-white font-semibold">Your Name</h2>
+        <h2 className="text-xl text-white font-semibold">Soumik Sil</h2>
         <p className="text-center text-sm text-white mt-2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.
         </p>
@@ -71,6 +69,7 @@ const Profile = () => {
         </button>
         <button className="w-full p-2 bg-blue-500 text-white rounded-md transition duration-300 ease-in-out transform hover:bg-blue-600 hover:scale-105"
           onClick={() => {
+            localStorage.removeItem("userid")
             navigate("/", { replace: true });
           }}
         >

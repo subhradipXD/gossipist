@@ -1,14 +1,28 @@
 import AllChats from "./components/AllChats";
 import ChatBox from "./components/ChatBox";
 import Profile from "./components/Profile";
-
-import { useFirebase } from "./Context/FirebaseContext";
-
+import { useNavigate } from "react-router-dom";
+import { useUserStore } from "./lib/useUserStore";
+import { useEffect } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { app } from "./lib/firebase";
+const auth = getAuth(app);
 
 const MainComponent = () => {
+    const navigate = useNavigate();
 
-    const Firebase = useFirebase();
-    console.log(Firebase);
+    const user = localStorage.getItem("userid");
+    const { fetchUserInfo, currentUser } = useUserStore();
+    useEffect(() => {
+        if (user === null) {
+            navigate("/");
+        }
+        onAuthStateChanged(auth, (user) => {
+            fetchUserInfo(user)
+        })
+        fetchUserInfo(user);
+    }, [user]);
+    console.log(currentUser);
 
     return (
         <>
@@ -24,4 +38,4 @@ const MainComponent = () => {
     )
 }
 
-export default MainComponent
+export default MainComponent;

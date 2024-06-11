@@ -4,11 +4,9 @@ import { useContext } from "react";
 import { AppContext } from "../context/ContextProvider";
 
 const AllChats = () => {
-  const { user, authLoading } = useContext(AppContext);
+  const { user } = useContext(AppContext);
 
-  return authLoading ? (
-    <></>
-  ) : (
+  return (
     <div className="flex flex-col w-1/4 h-full border border-white  backdrop-blur-md  rounded-lg">
       <div className="flex items-center justify-between p-4 border-b border-gray-300">
         <div className="flex items-center">

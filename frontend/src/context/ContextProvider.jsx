@@ -1,9 +1,10 @@
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { firestoreDB } from "../lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 export const AppContext = createContext();
+
 function ContextProvider({ children }) {
   const [authLoading, setauthLoading] = useState(false);
   const [user, setUser] = useState(null);

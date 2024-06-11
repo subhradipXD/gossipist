@@ -10,9 +10,9 @@ import {
 } from "firebase/auth";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { firestoreDB } from "../lib/firebase";
-// import { app } from "../lib/firebase";
+import { app } from "../lib/firebase";
 
-// const auth = getAuth(app);
+const auth = getAuth(app);
 // const firestoreDB = getFirestore(app);
 
 const Authentication = () => {
@@ -147,11 +147,10 @@ const Authentication = () => {
               />
               <button
                 type="submit"
-                className={`mt-4 p-1 rounded-md text-white transition duration-300 ${
-                  loading
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-indigo-500 hover:bg-indigo-700"
-                }`}
+                className={`mt-4 p-1 rounded-md text-white transition duration-300 ${loading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-indigo-500 hover:bg-indigo-700"
+                  }`}
                 onClick={() => {
                   if (!loading) {
                     handleSignUp();
@@ -206,11 +205,10 @@ const Authentication = () => {
               />
               <button
                 type="submit"
-                className={`mt-4 p-1 rounded-md text-white transition duration-300 ${
-                  loading
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-indigo-500 hover:bg-indigo-700"
-                }`}
+                className={`mt-4 p-1 rounded-md text-white transition duration-300 ${loading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-indigo-500 hover:bg-indigo-700"
+                  }`}
                 onClick={() => {
                   if (!loading) {
                     handleLogIn();

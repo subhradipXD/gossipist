@@ -11,5 +11,5 @@ const firebaseConfig = {
   databaseURL: "https://gossipist-6969-default-rtdb.firebaseio.com",
 };
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 export const firestoreDB = getFirestore(app);
